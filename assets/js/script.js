@@ -44,6 +44,8 @@ const coinImage = document.querySelector("#coin-image");
 //cell references!
 const numHeads = document.querySelector("#heads");
 const numTails = document.querySelector("#tails");
+const headsPercent = document.querySelector("#heads-percent");
+const tailsPercent = document.querySelector("#tails-percent");
 
 const flipButton = document.querySelector("#flip-button");
 flipButton.addEventListener("click", function () {
@@ -64,5 +66,9 @@ flipButton.addEventListener("click", function () {
   console.log("tails", tails);
   console.log(totalFlips);
   console.log("% heads: ", percentHeads(heads, totalFlips));
+  headsPercent.textContent =
+    Math.round(percentHeads(heads, totalFlips)).toString() + "%";
   console.log("% tails: ", percentTails(tails, totalFlips));
+  tailsPercent.textContent =
+    Math.round(percentTails(tails, totalFlips)).toString() + "%";
 });
